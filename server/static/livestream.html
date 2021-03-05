@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kurento Group Call Node</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+		.sc::-webkit-scrollbar {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div style="width: 70%;">
+            <video style="width: 100%;height: 100%;object-fit: fill;" id="stream" autoplay></video>
+        </div>
+        <div style="width: 30%;border: 1px solid white;position: relative;" >
+            <p style="text-align: center;">Log</p>
+            <ul style="height: 500px;overflow-y: auto;" class="sc" id="log">
+                
+            </ul>
+            <div style="display: flex;position: absolute;
+            width: 100%;
+            bottom: 0;">
+                <input style="width: 100%;" disabled id="message" type="text" placeholder="Enter new message" onkeypress="return runScript(event)">
+                <p style="cursor: pointer;
+                font-weight: bold;
+                color: white;
+                margin: 6px 5px;" onclick="sendChat();">Send</p>
+            </div>
+        </div>
+    </div>
+	<script src="./bower_components/socket.io-client/dist/socket.io.js"></script>
+    <script src="./bower_components/adapter.js/adapter.js"></script>
+    <script src="./bower_components/kurento-utils/js/kurento-utils.js"></script>
+    <script src="./js/stream/index.js"></script>
+	<script src="./js/participants.js"></script>
+    
+
+</body>
+</html>
